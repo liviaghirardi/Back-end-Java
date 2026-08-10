@@ -1,0 +1,50 @@
+public class ContaBancaria {
+
+    private String numero;
+    private double saldo;
+    private String titular;
+
+    public ContaBancaria(String numero, String titular, double saldoInicial) {
+        this.numero = numero;
+        this.titular = titular;
+        this.saldo = saldoInicial;
+    }
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");
+        } else {
+            System.out.println("Valor de depósito inválido.");
+        }
+    }
+
+    public void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
+        } else {
+            System.out.println("Saque não realizado. Verifique se o valor é válido ou se há saldo suficiente.");
+        }
+    }
+
+    public void verificarSaldo() {
+        System.out.println("Titular: " + titular + " | Conta: " + numero + " | Saldo Atual: R$ " + saldo);
+    }
+
+    public static void main(String[] args) {
+        
+        ContaBancaria minhaConta = new ContaBancaria("12345-6", "Ana Silva", 500.00);
+
+        minhaConta.verificarSaldo();
+
+        minhaConta.depositar(200.00);
+        minhaConta.verificarSaldo();
+
+        minhaConta.sacar(150.00);
+        minhaConta.verificarSaldo();
+
+        minhaConta.sacar(1000.00);
+        minhaConta.verificarSaldo();
+    }
+}
