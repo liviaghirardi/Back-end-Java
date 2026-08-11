@@ -1,14 +1,14 @@
 public class ContaBancaria {
 
     // Atributos
-    int numero;
-    double saldo;
+    private int numero;
+    private double saldo;
 
     //Construtor
 
     public ContaBancaria(int numero, double saldo){
         this.numero = numero;
-        this.saldo = saldo;
+        saldo = 0;
     }
 
     
@@ -28,6 +28,19 @@ public class ContaBancaria {
             
         }
         return false;
+    }
+
+    // Gatters and Setters
+    public double getSaldo(){
+        return saldo;
+    }
+
+    public int getNumero(){
+        return numero
+    }
+
+    public void SetNumero(int numero){
+        this.numero = numero;
     }
 
     // toString
