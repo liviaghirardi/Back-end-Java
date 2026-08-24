@@ -18,7 +18,8 @@ public class L1ContaBancaria {
             saldo += valor;
             System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");
         } else {
-            System.out.println("Valor de depósito inválido!");        }
+            System.out.println("Valor de depósito inválido!");
+        }
     }
 
     // Método para sacar dinheiro
@@ -27,7 +28,8 @@ public class L1ContaBancaria {
             saldo -= valor;
             System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
         } else {
-            System.out.println("Saldo insuficiente ou valor inválido para saque!");        }
+            System.out.println("Saldo insuficiente ou valor inválido para saque!");
+        }
     }
 
     // Método para verificar o saldo
@@ -36,21 +38,11 @@ public class L1ContaBancaria {
     }
 }
 
-public class MainConta {
+class MainConta {
     public static void main(String[] args) {
-        // Criando uma instância da ContaBancaria
+        // Criando uma instância da ContaBancaria sem os rótulos nos parâmetros
         L1ContaBancaria minhaConta = new L1ContaBancaria("12345-6", "Ana Silva", 500.0);
 
-        // Verificando saldo inicial
-        minhaConta.verificarSaldo();
-
-        // Realizando um depósito
-        minhaConta.depositar(200.0);
-        minhaConta.verificarSaldo();
-
-        // Realizando um saque
-        minhaConta.sacar(150.0);
         minhaConta.verificarSaldo();
     }
-    
 }
